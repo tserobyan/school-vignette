@@ -5,11 +5,11 @@ var cookieParser = require('cookie-parser');
 var lessMiddleware = require('less-middleware');
 var logger = require('morgan');
 require('dotenv').config();
+require('./services/db-connection')
 
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 
-require('./services/db-connection')
 var app = express();
 
 // view engine setup

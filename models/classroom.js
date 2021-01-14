@@ -6,6 +6,10 @@ const classroom = new Schema({
         type: String,
         require: [true, 'Name is required']
     },
+    year: {
+        type: String,
+        require: [true, 'Year is required']
+    },
     image: {
         type: String,
         require: [true, 'Image is required']

@@ -1,12 +1,14 @@
-const classroom = require('../models/classroom');
 const Classroom = require('../models/classroom');
 
 exports.getClassrooms = () => {
     return Classroom.find();
 }
 
-exports.addClassroom = (name_, image, quote, body) => {
-    const classroom = new Classroom({ name: name_, image, quote, body});
+exports.getClassroomByYear = (year) => {
+    return Classroom.findOne({ 'year': year });
+}
 
+exports.addClassroom = (obj) => {
+    const classroom = new Classroom(obj);
     return classroom.save();
 }

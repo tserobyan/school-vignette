@@ -4,8 +4,15 @@ exports.getStudents = () => {
     return Student.find();
 }
 
-exports.addStudent = (name_, image, quote, body, class_) => {
-    const student = new Student({ name: name_, image, quote, body, class: class_ });
+exports.getStudentsByClassroom = (year) => {
+    return Student.find({ 'class': year });
+}
 
-    return student.save(); 
+exports.getStudentById = (id) => {
+    return Student.findById(id);
+}
+
+exports.addStudent = (obj) => {
+    const student = new Student(obj);
+    return student.save();
 }

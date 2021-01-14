@@ -1,6 +1,13 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
+	<h1>{{title}}</h1>
+	{% for classroom in classrooms %}
+    <div class='classroom'>
+      <img src='{{classroom.image}}'>
+      <h2>{{classroom.name}}</h2>
+      {{classroom.description}}
+      <a href='/class/{{classroom.year}}'>Ավելին</a>
+    </div>
+  {% endfor %}
 {% endblock %}
