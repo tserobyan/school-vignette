@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/{{classroom.style}}' />
-  </head>
-  <body>
-    {% block body %}{% endblock %}
-  </body>
+	<head>
+		<title>{{ title }}</title>
+		<link rel='stylesheet' href='/stylesheets/style.css'/>
+		<link rel='stylesheet' href='/stylesheets/{{classroom.style}}'/>
+	</head>
+	<body>
+		{% include 'navigation.twig' with {classroom, student} %}
+		{% block body %}{% endblock %}
+	</body>
 </html>
