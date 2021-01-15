@@ -6,9 +6,9 @@
 	{{classroom.description}}
 	{% for student in students %}
 		<div class='student'>
-			<h3>{{student.name}}</h3>
 			<img src='{{student.image}}'>
-      <p>{{student.quote}}</p>
+			<h3>{{student.name}}</h3>
+      		<p>{{student.quote}}</p>
 			<a href='/student/{{student.id}}'>Ավելին</a>
 		</div>
 	{% endfor %}
