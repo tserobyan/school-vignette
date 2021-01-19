@@ -1,7 +1,7 @@
 var accessList = [];
 var reader = require('fs-extra');
 var _username, _password;
-reader.readJson('../config.json').then(res => {
+reader.readJson('./config.json').then(res => {
     _username = res.username;
     _password = res.password;
 }).catch(err => {

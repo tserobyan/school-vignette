@@ -1,9 +1,6 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <div class="bg"></div>
-  <div class="bg bg2"></div>
-  <div class="bg bg3"></div>
   {% for classroom in classrooms %}
       <div class='classroom'>
         <img src='{{classroom.image}}'>
