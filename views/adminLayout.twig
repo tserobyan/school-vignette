@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/admin.css' />
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/javascripts/admin.js"></script>
-  </head>
-  <body>
-    {% block body %}{% endblock %}
-  </body>
-</html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel='stylesheet' href='/stylesheets/admin.css'/>
+		<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="/javascripts/admin.js"></script>
+	</head>
+	<body>
+		<div class="navigation">
+			<ul>
+				<a href="/" class="home">
+					<li>Գլխավոր էջ</li>
+				</a>
+				<a href="/admin" class="settings">
+					<li>Կառավարակետ</li>
+				</a>
+				<a href="/admin/students" class="student">
+					<li>Սովորողներ</li>
+				</a>
+				<ul>
+					<a href="/admin/students" class="all">
+						<li>Բոլորը</li>
+					</a>
+					<a href="/admin/new/student" class="add">
+						<li>Ավելացնել</li>
+					</a>
+				</ul>
+				<a href="/admin/classrooms" class="class">
+					<li>Դասարաններ</li>
+				</a>
+				<ul>
+					<a href="/admin/classrooms" class="all">
+						<li>Բոլորը</li>
+					</a>
+					<a href="/admin/new/class" class="add">
+						<li>Ավելացնել</li>
+					</a>
+				</ul>
+				<a onclick="logOut()" class="logout">
+					<li>Դուրս գալ</li>
+				</a>
+			</ul>
+		</div>
+		<div class="main">
+    <h1>{{title}}</h1>
+     {% block body %}{% endblock %}
+			</div>
+		</body>
+	</html>

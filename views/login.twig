@@ -1,38 +1,37 @@
 {% extends 'loginLayout.twig' %}
 
 {% block body %}
-    <div class="wrapper">
-        <div class="container">
-            <span id="warning">Մուտքանունի կամ գաղտնաբառի սխալ</span>
-            <input id="username" type="text" name="username" placeholder="Մուտքանուն">
-            <input id="password" type="password" name="password" placeholder="Գաղտնաբառ" onchange="login()">
-            <button onclick="login()">Մուտք</button>
-        </div> 
-    </div>
-    <ul class="particles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-  </ul>
+	<div class="container">
+		<h2>{{title}}</h2>
+		<span id="warning">Մուտքանունի կամ գաղտնաբառի սխալ</span>
+		<input id="username" type="text" name="username" placeholder="Մուտքանուն">
+		<input id="password" type="password" name="password" placeholder="Գաղտնաբառ" onchange="login()">
+		<button onclick="login()">Մուտք</button>
+	</div>
+	<ul class="particles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 {% endblock %}

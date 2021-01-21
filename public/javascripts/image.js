@@ -16,6 +16,7 @@ function saveFile() {
 function showImages() {
     axios.get('/images').then(function (response) {
         var library = document.getElementById('library');
+        library.innerHTML = '';
         for (let url of response.data) {
             let image = document.createElement('img');
             image.setAttribute('src', '/images/' + url);
@@ -27,7 +28,7 @@ function showImages() {
 }
 
 function openLibrary() {
-    document.getElementById('libraryMain').style.display = '';
+    document.getElementById('libraryMain').style.display = 'block';
     showImages();
 }
 

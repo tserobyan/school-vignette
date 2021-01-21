@@ -21,3 +21,8 @@ function addStudent() {
         console.log(response);
     });
 }
+
+function logOut() {
+    document.cookie = "access=; expires=2030-03-04T15:42:38.000Z; path=/";
+    window.location.href = "/admin";
+}

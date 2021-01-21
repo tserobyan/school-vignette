@@ -16,7 +16,7 @@ fs.readJson('./config.json').then(res => {
 
 router.get('/', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
-		res.render('admin', { title: 'Admin' });
+		res.render('admin', { title: 'Կառավարակետ' });
 	} else {
 		res.redirect('/admin/login')
 	}
@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/login', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
-		res.render('admin', { title: 'Կառավարակետ' });
+		res.redirect('/admin');
 	}
 	res.render('login', { title: 'Մուտք' });
 });
@@ -46,7 +46,7 @@ router.post('/upload', upload.single('image'), function (req, res, next) {
 
 router.get('/new/class', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
-		res.render('adminClass', { styles });
+		res.render('adminClass', { styles, title: 'Ավելացնել դասարան' });
 	} else {
 		res.redirect('/admin/login')
 	}
@@ -65,7 +65,7 @@ router.post('/new/class', function (req, res, next) {
 router.get('/new/student', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getClassrooms().then((classrooms) => {
-			res.render('adminStudent', { classrooms });
+			res.render('adminStudent', { classrooms, title: 'Ավելացնել սովորող' });
 		});
 	} else {
 		res.redirect('/admin/login')
