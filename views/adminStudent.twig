@@ -4,9 +4,9 @@
 	<label for='name'>Անուն</label>
 	<input type='text' value='{{student.name}}' id="name" name='name'>
 	<label>Նկար</label>
-	{% include 'images.twig' %}
+	{% include 'images.twig' with student %}
 	<label for='quote'>Մեջբերում</label>
-	<input type='text' value='{{student.year}}' id="quote" name='quote'>
+	<input type='text' value='{{student.quote}}' id="quote" name='quote'>
 	<label for='class'>Դասարան</label>
 	<select id='class' name='class'>
 		{% for classroom in classrooms %}
@@ -19,6 +19,6 @@
 	<script>
 		var body = new Quill('#body', {theme: 'snow', modules: {toolbar: [['bold', 'italic', 'underline', 'strike'], ['blockquote', 'code-block'], [{ 'size': ['small', false, 'large', 'huge'] }], [{ 'header': [1, 2, 3, 4, 5, 6, false] }], [{ 'color': [] }, { 'background': [] }], [{ 'font': [] }], [{ 'align': [] }], ['clean']]}});
 	</script>
-	<button {% if student %} onclick='saveStudent({{class.id}})' {% else %} onclick='addStudent()' {% endif %}>
+	<button {% if student %} onclick="saveStudent('{{student.id}}')" {% else %} onclick='addStudent()' {% endif %}>
 		Պահպանել</button>
 {% endblock %}

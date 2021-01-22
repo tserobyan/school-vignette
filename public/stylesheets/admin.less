@@ -10,7 +10,12 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration: none;
   cursor: pointer;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 label {
@@ -171,4 +176,95 @@ button:hover{
 }
 input[type = "file"]{
   border: #aaa 2px dashed;
+}
+
+table{
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+td, th{
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+th{
+  background: #205c5e;
+  border-color: #1b5355;
+  color: white;
+  font-weight: 300;
+}
+tr:nth-child(even){
+  background: #ddd;
+}
+tr:hover{
+  background: #bbb;
+}
+tr a, tr button{
+  background: none;
+  border: solid 2px #1b5355;
+  color: #111;
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+tr a:hover, tr button:hover{
+  background: #1b5355;
+  color: white;
+}
+tr img{
+  height: 80px;
+}
+.body{
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 115px;
+  max-height: 130px;
+  overflow: auto;
+  border-left: none;
+  border-right: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.adminBlock{
+  display: inline-block;
+  vertical-align: text-top;
+  width: 44%;
+  min-height: 150px;
+  margin: 2%;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  background: #eee;
+  border-radius: 10px;
+}
+
+.adminBlock h3{
+  font-size: 22px;
+  background: #3f9b9f;
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 2%;
+  border: solid 2px #3f9b9f;
+  border-radius: 10px 10px 0 0;
+}
+
+.adminBlock a{
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 13px;
 }

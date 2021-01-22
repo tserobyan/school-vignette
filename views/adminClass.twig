@@ -6,7 +6,7 @@
 	<label for='year'>Տարի</label>
 	<input type='text' value='{{class.year}}' id="year" name='year'>
 	<label>Գլխավոր նկար</label>
-	{% include 'images.twig' %}
+	{% include 'images.twig' with class %}
 	<label for='style'>Դիզայն</label>
 	<select id='style' name='style'>
 		{% for style in styles %}
@@ -19,5 +19,6 @@
 	<script>
 		var description = new Quill('#description', {theme: 'snow', modules: {toolbar: [['bold', 'italic', 'underline', 'strike'], ['blockquote', 'code-block'], [{ 'size': ['small', false, 'large', 'huge'] }], [{ 'header': [1, 2, 3, 4, 5, 6, false] }], [{ 'color': [] }, { 'background': [] }], [{ 'font': [] }], [{ 'align': [] }], ['clean']]}});
 	</script>
-    <button {% if class %} onclick = 'saveClass({{class.id}})' {% else %} onclick = 'addClass()' {% endif %}> Պահպանել</button>
+	<button {% if class %} onclick="saveClass('{{class.id}}')" {% else %} onclick='addClass()' {% endif %}>
+		Պահպանել</button>
 {% endblock %}

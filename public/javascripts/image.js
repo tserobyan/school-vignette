@@ -37,6 +37,6 @@ function closeLibrary() {
 }
 
 function selectImage(url) {
-    document.getElementById('chosenImage').setAttribute('src', '/images/' + url)
-    document.getElementById('chosenImage').setAttribute('class', url)
+    document.getElementById('chosenImage').setAttribute('src', '/images/' + url);
+    document.getElementById('chosenImage').setAttribute('class', url);
 }
