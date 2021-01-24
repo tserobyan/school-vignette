@@ -22,17 +22,11 @@ body{
     vertical-align: text-top;
     display: inline-block;
     object-fit: cover;
-    height: 280px;
+    height: 310px;
     width: ~"calc(100% + 20px)";
     transform: translate(-10px, -10px);
-    margin-bottom: 10px;
-    transition: 0.3s;
+    margin-bottom: -10px;
     border-radius: 12px 12px 0 0;
-}
-
-.classroomInfo img:hover{
-    height: 320px;
-    margin-bottom: -20px;
 }
 
 .student{
@@ -98,19 +92,7 @@ body{
 }
 
 .student a:hover{
-    background: #191b9b; 
-    animation: more 2s ease-in-out infinite;
-    animation-delay: 0.5s;
-}
-
-@keyframes more {
-    0% { background: #191b9b; }
-    40% { background: #1f72c0; transform: rotate(0deg); }
-    45% { background: #1f72c0; transform: rotate(5deg); }
-    50% { background: #1f72c0; transform: rotate(-5deg); }
-    55% { background: #1f72c0; transform: rotate(5deg); }
-    60% { background: #1f72c0; transform: rotate(0deg); }
-    100% { background: #191b9b; }
+    background: #123e66;
 }
 
 // Single Student
@@ -129,6 +111,7 @@ body{
     text-align: left;
 }
 .studentInfo{
+    position: relative;
     float: left;
     height: 450px;
     width: 40%;
@@ -140,22 +123,26 @@ body{
     transform: translate(-10px, -10px);
 }
 .studentInfo img{
-    vertical-align: text-top;
-    display: inline-block;
+    position: absolute;
     object-fit: cover;
-    height: 300px;
+    height: 100%;
     width: 100%;
+    left: 0;
+    top: 0;
     margin-bottom: 15px;
-    transition: 0.35s;
-    border-radius: 12px;
+    border-radius: 12px 0 0 12px;
 }
-.studentInfo img:hover{
-    height: 340px;
+.studentNameAndQuote{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(230, 230, 230, 0.6);
+    padding: 10px;
     margin: 0;
+    box-sizing: border-box;
+    border-bottom-left-radius: 12px;
 }
-.studentInfo h3{
-    text-align: left;
-}
-.studentInfo p{
-    text-align: left;
+.studentNameAndQuote h3{
+    margin: 5px 0 10px;
 }
