@@ -1,8 +1,12 @@
 {% extends 'classroomLayout.twig' %}
 
 {% block body %}
-	<h3>{{student.name}}</h3>
-	<img src='{{student.image}}'>
-	<p>{{student.quote}}</p>
-	{{student.body}}
+	<div class="studentLongInfo">
+		<div class="studentInfo">
+			<img src='{{student.image}}'>
+			<h3>{{student.name}}</h3>
+			<p>{{student.quote}}</p>
+		</div>
+		{{student.body}}
+	</div>
 {% endblock %}

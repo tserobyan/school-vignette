@@ -3,9 +3,8 @@
 {% block body %}
   {% for classroom in classrooms %}
       <a class = "classroom" href='/class/{{classroom.year}}'>
-        <h1>{{classroom.name}}</h1>
         <img src='{{classroom.image}}'>
-        {{classroom.description}}
+        <h1>{{classroom.name}}</h1>
       </a>
     {% endfor %}
 {% endblock %}

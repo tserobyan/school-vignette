@@ -31,7 +31,7 @@ function addStudent() {
         body: body.root.innerHTML,
         class: document.getElementById('class').value,
     }).then(function (response) {
-        console.log(response);
+        window.location.href = "/admin/students";
     });
 }
 
