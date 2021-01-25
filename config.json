@@ -1,5 +1,5 @@
 {
     "username": "admin",
     "password": "admin",
-    "styles": ["simple.css", "modern.css"]
+    "styles": ["simple.css", "modern.css", "black-and-white.css"]
 }
