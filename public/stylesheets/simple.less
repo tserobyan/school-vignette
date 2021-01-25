@@ -3,19 +3,26 @@ body{
 }
 
 .classroomInfo{
-    margin-bottom: 5%;
+    margin-bottom: 40px;
     background-color: rgba(235, 235, 235, 0.4);
-    width: 86%;
+    width: 96%;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
-    padding: 40px 0;
+    padding: 40px 10px;
     backdrop-filter: blur(7px);
+    text-align: left;
 }
 
 .classroomInfo img{
-    width: 70%;
-    margin-bottom: 15px;
+    object-fit: cover;
+    height: ~"calc(100% + 80px)";
+    width: 50%;
+    transform: translate(-10px, -40px);
+    float: left;
+    margin-right: 30px;
+    border-radius: 15px 0 0 15px;
 }
 
 .classroomInfo h2{
@@ -28,16 +35,22 @@ body{
     color:#212121;
 }
 
+.classroomInfo p,h1,h2,h3,h4,h5,h6,a,i,b,strong,span{
+  text-align: left;
+}
+
 .student{
     position: relative;
     padding: 0px;
-    width: 20%;
+    width: 24%;
+    height: 250px;
     border: 0px;
 }
 
 .student img{
     display: block;
-    height: auto;
+    object-fit: cover;
+    height: 100%;
     width: 100%;
 }
 
@@ -49,29 +62,40 @@ body{
     right: 0;
     height: 100%;
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
     opacity: 0;
     transition: .5s ease;
-    background-color: rgba(0, 140, 186, 0.9);
-  }
+}
 
-  .student:hover .studentShortInfo {
+.student:nth-of-type(3n+2) .studentShortInfo{
+  background-color: rgba(0, 140, 186, 0.9);
+}
+.student:nth-of-type(3n+1) .studentShortInfo{
+  background-color: rgba(32, 134, 66, 0.9);
+}
+.student:nth-of-type(3n+0) .studentShortInfo{
+  background-color: rgba(224, 171, 24, 0.9);
+}
+
+.student:hover .studentShortInfo {
     opacity: 1;
-  }
+}
 
-  .student p{
+.student p{
     color: white;
     font-size: 16px;
     position: absolute;
-    top: 30%;
-    left: 55%;
-    width: 100%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    top: ~"calc(3% + 20px)";
+    left: 50%;
+    width: ~"calc(100% - 20px)";
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
     font-style: italic;
-  }
+}
 
-  .student h3{
+.student h3{
     color: white;
     font-size: 18px;
     position: absolute;
@@ -81,25 +105,41 @@ body{
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
-
-  .student a{
+}
+.student a{
     color: white;
     font-size: 18px;
     position: absolute;
     top: 90%;
-    left: 80%;
+    right: 0;
     border-radius: 5%;
-    padding: 8px;
+    padding: 5px;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background-color: #004d66;
     text-decoration: none;
     border: 0px;
-  }
-
-  .student a:hover{
-    background-color: #002633; 
+}
+.student a:hover{
     transition: 0.5s;
-  }
+}
+
+.student:nth-of-type(3n+2) a{
+  background-color: #004d66;
+}
+.student:nth-of-type(3n+1) a{
+  background-color: #0b5a0b;
+}
+.student:nth-of-type(3n+0) a{
+  background-color: #c97f0f;
+}
+
+.student:nth-of-type(3n+2) a:hover{
+  background-color: #002633;
+}
+.student:nth-of-type(3n+1) a:hover{
+  background-color: #0e4607;
+}
+.student:nth-of-type(3n+0) a:hover{
+  background-color: #92680d;
+}
