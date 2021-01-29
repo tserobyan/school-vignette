@@ -25,8 +25,6 @@ spec:
           env:
             - name: DBURI
               value: "mongodb://root:root@mongo:27017/school-vignette?authSource=admin"
-            - name: HOME_URL
-              value: /school-vignette/
           volumeMounts:
             - mountPath: /app/public/images
               name: school-vignette-public
