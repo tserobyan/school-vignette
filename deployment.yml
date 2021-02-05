@@ -37,7 +37,7 @@ spec:
                   name: mongodb-admin
                   key: password
             - name: DBURI
-              value: "mongodb://$(DB_URL_USERNAME):$(DB_URL_PASSWORD)@$(DB_URL_HOSTNAME):27017/simple-catalog?authSource=admin"
+              value: "mongodb://$(DB_URL_USERNAME):$(DB_URL_PASSWORD)@$(DB_URL_HOSTNAME):27017/vignette?authSource=admin"
           volumeMounts:
             - mountPath: /app/public/images
               name: data
