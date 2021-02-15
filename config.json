@@ -1,5 +1,11 @@
 {
     "username": "admin",
     "password": "admin",
-    "styles": ["simple.css", "modern.css", "black-and-white.css", "yellow.css"]
+    "styles": [
+        "artashes.css",
+        "black-and-white.css",
+        "modern.css",
+        "simple.css",
+        "yellow.css"
+    ]
 }
