@@ -23,8 +23,8 @@ app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(process.env.HOME_URL, indexRouter);
-app.use(process.env.HOME_URL+'admin', adminRouter);
+app.use('/', indexRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
