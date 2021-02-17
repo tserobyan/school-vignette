@@ -38,6 +38,8 @@ spec:
                   key: password
             - name: DBURI
               value: "mongodb://$(DB_URL_USERNAME):$(DB_URL_PASSWORD)@$(DB_URL_HOSTNAME):27017/vignette?authSource=admin"
+            - name: HOME_URL
+              value: /vignette/
           volumeMounts:
             - mountPath: /app/public/images
               name: data
