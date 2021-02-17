@@ -1,10 +1,10 @@
 <nav>
-	<a href="/">
+	<a href="{{HOME_URL}}">
 		<h1>{{title}}</h1>
 	</a>
 	<ul>
 		{% if student %}
-			<a href="/class/{{classroom.year}}">
+			<a href="{{HOME_URL}}class/{{classroom.year}}">
 				<li>{{classroom.name}}</li>
 			</a>
 		{% endif %}

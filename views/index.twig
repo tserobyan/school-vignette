@@ -2,7 +2,7 @@
 
 {% block body %}
   {% for classroom in classrooms %}
-      <a class = "classroom" href='/class/{{classroom.year}}'>
+      <a class = "classroom" href='{{HOME_URL}}class/{{classroom.year}}'>
         <img src='{{classroom.image}}'>
         <h1>{{classroom.name}}</h1>
       </a>

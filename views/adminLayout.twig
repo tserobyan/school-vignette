@@ -5,6 +5,7 @@
 		<title>{{ title }}</title>
 		<link rel='stylesheet' href='/stylesheets/admin.css'/>
 		<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+		<script type="text/javascript"> var HOME_URL = '{{ HOME_URL }}'; </script>
 		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script src="/javascripts/admin.js"></script>
@@ -12,35 +13,35 @@
 	<body>
 		<div class="navigation">
 			<ul>
-				<a href="/" class="home">
+				<a href="{{HOME_URL}}" class="home">
 					<li>Գլխավոր էջ</li>
 				</a>
-				<a href="/admin" class="settings">
+				<a href="{{HOME_URL}}admin" class="settings">
 					<li>Կառավարակետ</li>
 				</a>
-				<a href="/admin/students" class="student">
+				<a href="{{HOME_URL}}admin/students" class="student">
 					<li>Սովորողներ</li>
 				</a>
 				<ul>
-					<a href="/admin/students" class="all">
+					<a href="{{HOME_URL}}admin/students" class="all">
 						<li>Բոլորը</li>
 					</a>
-					<a href="/admin/new/student" class="add">
+					<a href="{{HOME_URL}}admin/new/student" class="add">
 						<li>Ավելացնել</li>
 					</a>
 				</ul>
-				<a href="/admin/classrooms" class="class">
+				<a href="{{HOME_URL}}admin/classrooms" class="class">
 					<li>Դասարաններ</li>
 				</a>
 				<ul>
-					<a href="/admin/classrooms" class="all">
+					<a href="{{HOME_URL}}admin/classrooms" class="all">
 						<li>Բոլորը</li>
 					</a>
-					<a href="/admin/new/class" class="add">
+					<a href="{{HOME_URL}}admin/new/class" class="add">
 						<li>Ավելացնել</li>
 					</a>
 				</ul>
-				<a onclick="logOut()" class="logout">
+				<a href="{{HOME_URL}}admin/logout" class="logout">
 					<li>Դուրս գալ</li>
 				</a>
 			</ul>

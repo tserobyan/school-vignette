@@ -1,5 +1,5 @@
 function addClass() {
-    axios.post('/admin/new/class', {
+    axios.post(HOME_URL+'admin/new/class', {
         name: document.getElementById('name').value,
         year: document.getElementById('year').value,
         image: '/images/' + document.getElementById('chosenImage').className,
@@ -11,7 +11,7 @@ function addClass() {
 }
 
 function saveClass(id) {
-    axios.post('/admin/edit/class/' + id, {
+    axios.post(HOME_URL+'admin/edit/class/' + id, {
         id,
         name: document.getElementById('name').value,
         year: document.getElementById('year').value,
@@ -24,7 +24,7 @@ function saveClass(id) {
 }
 
 function addStudent() {
-    axios.post('/admin/new/student', {
+    axios.post(HOME_URL+'admin/new/student', {
         name: document.getElementById('name').value,
         image: '/images/' + document.getElementById('chosenImage').className,
         quote: document.getElementById('quote').value,
@@ -36,7 +36,7 @@ function addStudent() {
 }
 
 function saveStudent(id) {
-    axios.post('/admin/edit/student/' + id, {
+    axios.post(HOME_URL+'admin/edit/student/' + id, {
         id,
         name: document.getElementById('name').value,
         quote: document.getElementById('quote').value,
@@ -49,18 +49,13 @@ function saveStudent(id) {
 }
 
 function deleteStudent(id) {
-    axios.delete('/admin/delete/student/' + id);
+    axios.delete(HOME_URL+'admin/delete/student/' + id);
     document.getElementById(id).style.display = "none";
 }
 
 function deleteClass(id) {
-    axios.delete('/admin/delete/class/' + id);
+    axios.delete(HOME_URL+'admin/delete/class/' + id);
     document.getElementById(id).style.display = "none";
-}
-
-function logOut() {
-    document.cookie = "access=; expires=2030-03-04T15:42:38.000Z; path=/";
-    window.location.href = "/admin";
 }
 
 function search() {

@@ -8,6 +8,7 @@ var { addStudent, getStudents, getStudentById, editStudent, deleteStudentById } 
 var { haveAccess, newAccess } = require('../services/access');
 var fs = require('fs-extra');
 var styles;
+var HOME_URL = process.env.HOME_URL;
 fs.readJson('./config.json').then(res => {
 	styles = res.styles;
 }).catch(err => {
@@ -18,11 +19,11 @@ router.get('/', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getClassrooms().then((classrooms) => {
 			getStudents().then((students) => {
-				res.render('admin', { title: 'Կառավարակետ', classrooms: classrooms.length, students: students.length });
+				res.render('admin', { title: 'Կառավարակետ', classrooms: classrooms.length, students: students.length, HOME_URL });
 			})
 		})
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -37,39 +38,47 @@ router.get('/readme/:article', function (req, res, next) {
 			}
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
+});
+router.get('/logout', function (req, res, next) {
+	res.cookie('access', '', { httpOnly: true });
+	res.redirect(HOME_URL + 'admin');
 });
 
 router.get('/login', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
-		res.redirect('/admin');
+		res.redirect(HOME_URL + 'admin');
+	} else{
+		res.cookie('access', '', { httpOnly: true });
+		res.render('login', { title: 'Մուտք', HOME_URL, warning: true });
 	}
-	res.render('login', { title: 'Մուտք' });
 });
 
-router.get('/access', function (req, res, next) {
-	res.send(haveAccess(req.cookies.access))
-});
-router.post('/get-access', function (req, res, next) {
-	res.send("" + newAccess(req.body.username, req.body.password));
+router.post('/login', function (req, res, next) {
+	if (haveAccess(req.cookies.access)) {
+		res.redirect(HOME_URL + 'admin');
+	} else {
+		res.cookie('access', newAccess(req.body.username, req.body.password), { httpOnly: true });
+		res.redirect(HOME_URL + 'admin');
+	}
 });
 
 router.post('/upload', upload.single('image'), function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		res.send('/images/' + req.file.filename);
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
 router.get('/classrooms', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getClassrooms().sort({ year: 'desc' }).exec((err, classrooms) => {
-			res.render('adminTable', { table: classrooms, title: 'Դասարաններ' });
+			res.render('adminTable', { table: classrooms, title: 'Դասարաններ', HOME_URL });
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -79,17 +88,17 @@ router.delete('/delete/class/:class', function (req, res, next) {
 			res.send(response);
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
 router.get('/students', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getStudents().sort({ class: 'desc' }).exec((err, students) => {
-			res.render('adminTable', { table: students, title: 'Սովորողներ' });
+			res.render('adminTable', { table: students, title: 'Սովորողներ', HOME_URL });
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -99,15 +108,15 @@ router.delete('/delete/student/:student', function (req, res, next) {
 			res.send(response);
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
 router.get('/new/class', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
-		res.render('adminClass', { styles, title: 'Ավելացնել դասարան' });
+		res.render('adminClass', { styles, title: 'Ավելացնել դասարան', HOME_URL });
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -117,17 +126,17 @@ router.post('/new/class', function (req, res, next) {
 			res.send(response);
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
 router.get('/new/student', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getClassrooms().then((classrooms) => {
-			res.render('adminStudent', { classrooms, title: 'Ավելացնել սովորող' });
+			res.render('adminStudent', { classrooms, title: 'Ավելացնել սովորող', HOME_URL });
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -137,17 +146,17 @@ router.post('/new/student', function (req, res, next) {
 			res.send(response);
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
 router.get('/edit/class/:classroom', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getClassroomByYear(req.params.classroom).then((classroom) => {
-			res.render('adminClass', { styles, class: classroom, title: 'Խմբագրել դասարան' });
+			res.render('adminClass', { styles, class: classroom, title: 'Խմբագրել դասարան', HOME_URL });
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -157,7 +166,7 @@ router.post('/edit/class/:classroom', function (req, res, next) {
 			res.send(response);
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -165,11 +174,11 @@ router.get('/edit/student/:student', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		getClassrooms().then((classrooms) => {
 			getStudentById(req.params.student).then((student) => {
-				res.render('adminStudent', { classrooms, student, title: 'Խմբագրել սովորող' });
+				res.render('adminStudent', { classrooms, student, title: 'Խմբագրել սովորող', HOME_URL });
 			})
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 
@@ -179,7 +188,7 @@ router.post('/edit/student/:student', function (req, res, next) {
 			res.send(response);
 		});
 	} else {
-		res.redirect('/admin/login')
+		res.redirect(HOME_URL + 'admin/login')
 	}
 });
 

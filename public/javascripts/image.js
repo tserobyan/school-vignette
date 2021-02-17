@@ -4,7 +4,7 @@ function saveFile() {
     var formData = new FormData();
     let file = document.getElementById('image').files[0];
     formData.append("image", file);
-    axios.post('/admin/upload', formData, {
+    axios.post(HOME_URL+'admin/upload', formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -14,7 +14,7 @@ function saveFile() {
 }
 
 function showImages() {
-    axios.get('/images').then(function (response) {
+    axios.get(HOME_URL+'images').then(function (response) {
         var library = document.getElementById('library');
         library.innerHTML = '';
         for (let url of response.data) {

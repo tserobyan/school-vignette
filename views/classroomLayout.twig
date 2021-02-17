@@ -7,7 +7,7 @@
 		<link rel='stylesheet' href='/stylesheets/{{classroom.style}}'/>
 	</head>
 	<body>
-		{% include 'navigation.twig' with {classroom, student} %}
+		{% include 'navigation.twig' with {classroom, student, HOME_URL} %}
 		{% block body %}{% endblock %}
 	</body>
 </html>

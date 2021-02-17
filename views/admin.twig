@@ -3,16 +3,16 @@
 {% block body %}
 	<div class="adminBlock">
         <h3>Գործողություններ</h3>
-		<a href="/">Տեսնել գլխավոր էջը</a>
-		<a href="/admin/classrooms">Բոլոր դասարանները՝ {{classrooms}}</a>
-		<a href="/admin/new/class">Ավելացնել դասարան</a>
-		<a href="/admin/students">Բոլոր սովորողները՝ {{students}}</a>
-		<a href="/admin/new/student">Ավելացնել սովորող</a>
+		<a href="{{HOME_URL}}">Տեսնել գլխավոր էջը</a>
+		<a href="{{HOME_URL}}admin/classrooms">Բոլոր դասարանները՝ {{classrooms}}</a>
+		<a href="{{HOME_URL}}admin/new/class">Ավելացնել դասարան</a>
+		<a href="{{HOME_URL}}admin/students">Բոլոր սովորողները՝ {{students}}</a>
+		<a href="{{HOME_URL}}admin/new/student">Ավելացնել սովորող</a>
 	</div>
     <div class="adminBlock">
         <h3>Նշումներ ծրագրավորողների համար</h3>
-		<a href="/admin/readme/README">Ծրագրի մասին</a>
-		<a href="/admin/readme/password">Ինչպես փոխել գաղտնաբառը</a>
-		<a href="/admin/readme/styles">Ինչպես ավելացնել կամ հեռացնել դիզայն</a>
+		<a href="{{HOME_URL}}admin/readme/README">Ծրագրի մասին</a>
+		<a href="{{HOME_URL}}admin/readme/password">Ինչպես փոխել գաղտնաբառը</a>
+		<a href="{{HOME_URL}}admin/readme/styles">Ինչպես ավելացնել կամ հեռացնել դիզայն</a>
 	</div>
 {% endblock %}
