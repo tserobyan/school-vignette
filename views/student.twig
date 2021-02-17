@@ -3,7 +3,7 @@
 {% block body %}
 	<div class="studentLongInfo">
 		<div class="studentInfo">
-			<img src='{{student.image}}'>
+			<img src='{{HOME_URL}}{{student.image|split('/',2)[1]}}'>
 			<div class="studentNameAndQuote">
 				<h3>{{student.name}}</h3>
 				<i>{{student.quote}}</i>

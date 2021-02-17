@@ -2,13 +2,13 @@
 
 {% block body %}
 	<div class='classroomInfo'>
-		<img src='{{classroom.image}}'>
+		<img src='{{HOME_URL}}{{classroom.image|split('/', 2)[1] }}'>
 		<h2>{{classroom.name}}</h2>
 		{{classroom.description}}
 	</div>
 	{% for student in students %}
 		<div class='student'>
-			<img src='{{student.image}}'>
+			<img src='{{HOME_URL}}{{student.image|split('/', 2)[1]}}'>
 			<div class="studentShortInfo">
 				<h3>{{student.name}}</h3>
 				<p>{{student.quote}}</p>
