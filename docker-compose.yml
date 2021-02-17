@@ -17,6 +17,7 @@ services:
     restart: always
     environment:
       DBURI: mongodb://root:root@mongo:27017/school-vignette?authSource=admin
+      HOME_URL: /
     volumes:
       - ./files:/app/public/images
     ports:
