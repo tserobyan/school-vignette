@@ -150,7 +150,7 @@ body{
 @media screen and (max-width:800px) {
     .classroomInfo{
         float: unset;
-        width: 100%;
+        width: ~"calc(100% - 5px)";
         height: unset;
         font-size: 5vw;
     }
@@ -191,5 +191,21 @@ body{
         padding: 3px;
         font-size: 10px;
         border-radius: 3px;
+    }
+
+    .studentInfo{
+        width: ~"calc(100% + 20px)";
+    }
+    .studentInfo img{
+        border-radius: 0;
+    }
+    .studentNameAndQuote{
+        border-radius: 0;
+    }
+    .studentNameAndQuote h3 {
+        font-size: 5.5vw;
+    }
+    .studentNameAndQuote i {
+        font-size: 3.7vw;
     }
 }

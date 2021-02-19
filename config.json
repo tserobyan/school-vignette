@@ -2,8 +2,11 @@
     "username": "admin",
     "password": "admin",
     "styles": [
+        "adventure.css",
         "artashes.css",
         "black-and-white.css",
+        "clear.css",
+        "dark.css",
         "modern.css",
         "simple.css",
         "yellow.css"

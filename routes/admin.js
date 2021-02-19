@@ -1,7 +1,16 @@
 const { response } = require('express');
 var express = require('express');
-var multer = require('multer')
-var upload = multer({ dest: './public/images/' })
+var multer = require('multer');
+var storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, './public/images/');
+	},
+	filename: function (req, file, cb) {
+		const uniqueSuffix = 1E13 - Date.now() + '-' + Math.round(Math.random() * 1E5);
+		cb(null, uniqueSuffix + '-' + file.fieldname + '-' + file.originalname);
+	}
+});
+var upload = multer({ storage: storage });
 var router = express.Router();
 var { addClassroom, getClassrooms, getClassroomByYear, editClassroom, deleteClassroomById } = require('../services/classroom');
 var { addStudent, getStudents, getStudentById, editStudent, deleteStudentById } = require('../services/students');
@@ -49,7 +58,7 @@ router.get('/logout', function (req, res, next) {
 router.get('/login', function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
 		res.redirect(HOME_URL + 'admin');
-	} else{
+	} else {
 		res.cookie('access', '', { httpOnly: true });
 		res.render('login', { title: 'Մուտք', HOME_URL, warning: true });
 	}

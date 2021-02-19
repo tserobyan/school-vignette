@@ -43,41 +43,31 @@
 
 <body>
     <h1 id="mskh-school-vignette">MSKH School Vignette</h1>
-    <h3 id="-installation-and-start-admin-readme-readme-"><a href="/admin/readme/README">Installation and start</a></h3>
+    <h3 id="-installation-and-start-admin-readme-readme-"><a href="./README">Installation and start</a></h3>
     <h2 id="add-new-design">Add new design</h2>
-    <p>Add <em>.css</em> or <em>.less</em> file on <em>/public/stylesheets</em></p>
+    <p>Add your <em>.css</em> or <em>.less</em> file on <em>/public/stylesheets</em></p>
     <p>Css selectors you need</p>
     <ul>
         <p>All class page</p>
-        <li>.classroomInfo <em>a div whit classroom image, classroom name and description</em></li>
-        <li>.classroomInfo img <em>classroom image</em></li>
-        <li>.student <em>a div whit student image, the quote of student and a url to student's personal page</em></li>
-        <li>.student img <em>student image</em></li>
-        <li>.studentShortInfo <em>student name, the quote and url</em></li>
-        <li>.student h3 <em>student name</em></li>
-        <li>.student p <em>student quote</em></li>
-        <li>.student a <em>student url</em></li>
-        <p>Single student page</p>
-        <li>.studentLongInfo <em>all info of student</em></li>
-        <li>.studentInfo <em>student image, name and quote</em></li>
-        <li>.studentInfo img <em>student image</em></li>
-        <li>.studentNameAndQuote <em>student name and quote</em></li>
-        <li>.studentNameAndQuote h3 <em>student name</em></li>
-        <li>.studentNameAndQuote p <em>student quote</em></li>
+        <li>.classroomInfo <em>Classroom image, name and description</em></li>
+        <li>.classroomInfo img <em>Classroom image</em></li>
+        <li>.student <em>Student image, quote and a url</em></li>
+        <li>.student img <em>Student image</em></li>
+        <li>.studentShortInfo <em>Student name, quote and url</em></li>
+        <li>.student h3 <em>Student name</em></li>
+        <li>.student p <em>Student quote</em></li>
+        <li>.student a <em>Student url</em></li>
+        <p>Student page</p>
+        <li>.studentLongInfo <em>All information</em></li>
+        <li>.studentInfo <em>Student image, name and quote</em></li>
+        <li>.studentInfo img <em>Student image</em></li>
+        <li>.studentNameAndQuote <em>Student name and quote</em></li>
+        <li>.studentNameAndQuote h3 <em>Student name</em></li>
+        <li>.studentNameAndQuote p <em>Student quote</em></li>
     </ul>
     <p>You can use <em>modern.less</em> of <em>simple.less</em> as example</p>
-    <p><a href="/admin/readme/README#start">Start</a> and test your design</p>
+    <p><a href="./README#start">Start</a> and test your design</p>
     <p>Open <em>config.json</em></p>
-    <pre><code>{
-
-    <span class="hljs-attr">"username"</span>: <span class="hljs-string">"admin"</span>,
-
-    <span class="hljs-attr">"password"</span>: <span class="hljs-string">"admin"</span>,
-
-    <span class="hljs-attr">"styles"</span>: [<span class="hljs-string">"simple.css"</span>, <span class="hljs-string">"modern.css"</span>]
-
-}
-</code></pre>
     <p> Add your design name in the styles row.</p>
     <pre><code>{
 
@@ -85,16 +75,16 @@
 
     <span class="hljs-attr">"password"</span>: <span class="hljs-string">"admin"</span>,
 
-    <span class="hljs-attr">"styles"</span>: [<span class="hljs-string">"simple.css"</span>, <span class="hljs-string">"modern.css"</span>, <span class="hljs-string">"your-design-name.css"</span>]
+    <span class="hljs-attr">"styles"</span>: [<span class="hljs-string">"simple.css"</span>, <span class="hljs-string">"modern.css"</span>, <span class="hljs-string"><strong>"your-design-name.css"</strong></span>]
 
 }
 </code></pre>
-    <p>Save this file, and <a href="/admin/readme/README#push">push</a> to GitHub.</p>
+    <p>Save this file, and <a href="./README#push">push</a> to GitHub.</p>
     <h2 id="change-a-design">Change a design</h2>
     <p>Open <em>.css</em> or <em>.less</em> file in <em>/public/stylesheets</em></p>
-    <p>Do your changes, save this file, and <a href="/admin/readme/README#push">push</a> to GitHub.</p>
+    <p>Do your changes, save this file, and <a href="./README#push">push</a> to GitHub.</p>
     <h2 id="remove-a-design">Remove a design</h2>
-    <p>Remove <em>.css</em> and <em>.less</em> file from <em>/public/stylesheets</em></p>
+    <p>Remove <em>.css</em> and <em>.less</em> files from <em>/public/stylesheets</em></p>
     <p>Open <em>config.json</em></p>
     <pre><code>{
 
@@ -102,7 +92,7 @@
 
     <span class="hljs-attr">"password"</span>: <span class="hljs-string">"admin"</span>,
 
-    <span class="hljs-attr">"styles"</span>: [<span class="hljs-string">"simple.css"</span>, <span class="hljs-string">"modern.css"</span>, <span class="hljs-string">"your-design-name.css"</span>]
+    <span class="hljs-attr">"styles"</span>: [<span class="hljs-string">"simple.css"</span>, <span class="hljs-string">"modern.css"</span>, <span class="hljs-string"><strong>"your-design-name.css"</strong></span>]
 
 }
 </code></pre>
@@ -117,9 +107,9 @@
 
 }
 </code></pre>
-    <p>Save this file, and <a href="/admin/readme/README#push">push</a> to GitHub.</p>
+    <p>Save this file, and <a href="./README#push">push</a> to GitHub.</p>
     <h2 id="other-functions">Other functions</h2>
-    <p><a href="/admin/readme/password">Change username of password</a></p>
+    <p><a href="./password">Change username of password</a></p>
 
 </body>
 
