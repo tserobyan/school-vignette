@@ -75,7 +75,7 @@ router.post('/login', function (req, res, next) {
 
 router.post('/upload', upload.single('image'), function (req, res, next) {
 	if (haveAccess(req.cookies.access)) {
-		res.send('/images/' + req.file.filename);
+		res.send(HOME_URL + 'images/' + req.file.filename);
 	} else {
 		res.redirect(HOME_URL + 'admin/login')
 	}
