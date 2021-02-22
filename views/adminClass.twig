@@ -6,7 +6,7 @@
 	<label for='year'>Տարի</label>
 	<input type='text' value='{{class.year}}' id="year" name='year'>
 	<label>Գլխավոր նկար</label>
-	{% include 'images.twig' with class %}
+	{% include 'images.twig' with {class, HOME_URL} %}
 	<label for='style'>Դիզայն</label>
 	<select id='style' name='style'>
 		{% for style in styles %}

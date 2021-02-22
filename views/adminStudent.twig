@@ -4,7 +4,7 @@
 	<label for='name'>Անուն</label>
 	<input type='text' value='{{student.name}}' id="name" name='name'>
 	<label>Նկար</label>
-	{% include 'images.twig' with student %}
+	{% include 'images.twig' with {student, HOME_URL} %}
 	<label for='quote'>Մեջբերում</label>
 	<input type='text' value='{{student.quote}}' id="quote" name='quote'>
 	<label for='class'>Դասարան</label>
