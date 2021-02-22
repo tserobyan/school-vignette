@@ -14,7 +14,7 @@ function saveFile() {
 }
 
 function showImages() {
-    axios.get(HOME_URL + 'images').then(function (response) {
+    axios.get(HOME_URL + 'images/').then(function (response) {
         var library = document.getElementById('library');
         library.innerHTML = '';
         for (let url of response.data) {
